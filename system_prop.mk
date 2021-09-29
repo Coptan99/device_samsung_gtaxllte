@@ -85,4 +85,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SoC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=Samsung \
-    ro.soc.model=Exynos 7870
+    ro.soc.model=Exynos7870
