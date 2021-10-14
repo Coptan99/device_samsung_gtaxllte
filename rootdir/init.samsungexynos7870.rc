@@ -14,8 +14,6 @@ on early-init
 on init
     symlink /dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT /dev/block/persistent
 
-    setprop ro.kernel.ebpf.supported false
-
 on post-fs-data
     # C-STATE
     chown system system /sys/module/cpuidle/parameters/off
