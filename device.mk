@@ -103,9 +103,6 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter
 
 PRODUCT_PACKAGES += \
-    libtinyxml
-
-PRODUCT_PACKAGES += \
     libion
 
 # seccomp policy
