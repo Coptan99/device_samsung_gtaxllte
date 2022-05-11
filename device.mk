@@ -153,6 +153,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.universal7870
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Shims
 PRODUCT_PACKAGES += \
     libexynoscamera_shim
