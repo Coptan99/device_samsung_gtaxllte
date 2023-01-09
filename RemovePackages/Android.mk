@@ -4,7 +4,16 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := RemovePackages
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
-LOCAL_OVERRIDES_PACKAGES := arcore AppDirectedSMSService AmbientSensePrebuilt CalendarGooglePrebuilt CarrierSetup ConnMO DCMO DevicePolicyPrebuilt DMService Drive Maps MyVerizonServices OBDM_Permissions OemDmTrigger PrebuiltGmail Showcase SprintDM SprintHM YouTube YouTubeMusicPrebuilt VZWAPNLib VzwOmaTrigger obdm_stub SoundAmplifierPrebuilt TipsPrebuilt SafetyHubPrebuilt RecorderPrebuilt
+LOCAL_OVERRIDES_PACKAGES := ANGLE
+LOCAL_OVERRIDES_PACKAGES += Aperture AmbientSensePrebuilt
+LOCAL_OVERRIDES_PACKAGES += AppDirectedSMSService
+LOCAL_OVERRIDES_PACKAGES += BetterBugStub
+LOCAL_OVERRIDES_PACKAGES += CalendarGooglePrebuilt
+LOCAL_OVERRIDES_PACKAGES += CarrierLocation
+LOCAL_OVERRIDES_PACKAGES += Chrome
+LOCAL_OVERRIDES_PACKAGES += DeviceIntelligenceNetworkPrebuilt
+LOCAL_OVERRIDES_PACKAGES += PlayAutoInstallConfig
+LOCAL_OVERRIDES_PACKAGES += Velvet
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null
