@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/gtaxlwifi
+LOCAL_PATH := device/samsung/gtaxllte
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -49,7 +49,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos7870
-TARGET_KERNEL_CONFIG := lineage-gtaxlwifi_defconfig
+TARGET_KERNEL_CONFIG := lineage-gtaxllte_defconfig
 TARGET_LINUX_KERNEL_VERSION := 3.18
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
@@ -76,6 +76,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Filesystems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := efs
@@ -202,4 +206,4 @@ BOARD_VENDOR_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Inherit from the proprietary version
--include vendor/samsung/gtaxlwifi/BoardConfigVendor.mk
+-include vendor/samsung/gtaxllte/BoardConfigVendor.mk

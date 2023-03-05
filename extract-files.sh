@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=gtaxlwifi
+DEVICE=gtaxllte
 VENDOR=samsung
 
 # Load extract_utils and do some sanity checks

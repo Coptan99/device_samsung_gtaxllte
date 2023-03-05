@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/gtaxlwifi
+LOCAL_PATH := device/samsung/gtaxllte
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -41,7 +41,18 @@ PRODUCT_PACKAGES += \
     init.recovery.samsungexynos7870.rc \
     init.power.rc \
     init.wifi.rc \
+    init.baseband.rc \
+    init.vendor.rilcommon.rc \
+    init.vendor.rilchip.rc \
+    init.gps.rc \
     ueventd.samsungexynos7870.rc
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4:64 \
+    android.hardware.radio.config@1.2:64 \
+    android.hardware.radio.deprecated@1.0:64 \
+    secril_config_svc
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -67,7 +78,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
+    frameworks/native/data/etc/android.software.sip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
 # BSP
 PRODUCT_PACKAGES += \
@@ -99,6 +114,16 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     libhwc2on1adapter \
     libion
+
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cfg
+
+# Vibration
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # seccomp policy
 PRODUCT_COPY_FILES += \
@@ -244,7 +269,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service.gtaxlwifi
+    android.hardware.sensors@1.0-service.gtaxllte
 
 # Trust HAL
 PRODUCT_PACKAGES += \
@@ -287,4 +312,4 @@ $(call inherit-product, hardware/samsung_slsi/exynos5/empty.mk)
 $(call inherit-product, hardware/samsung_slsi/exynos7870/empty.mk)
 
 # Call the proprietary setup
-$(call inherit-product, vendor/samsung/gtaxlwifi/gtaxlwifi-vendor.mk)
+$(call inherit-product, vendor/samsung/gtaxllte/gtaxllte-vendor.mk)

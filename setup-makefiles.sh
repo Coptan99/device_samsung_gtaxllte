@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=gtaxlwifi
-DEVICE_COMMON=gtaxlwifi
+DEVICE=gtaxllte
+DEVICE_COMMON=gtaxllte
 VENDOR=samsung
 
 # Load extract_utils and do some sanity checks
@@ -29,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "gtaxlwifi gtanotexlwifi"
+write_headers "gtaxllte gtanotexllte"
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
