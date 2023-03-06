@@ -22,11 +22,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
+# Inherit some common EvolutionX stuff.
+$(call inherit-product, vendor/evolution/config/common_full_tablet.mk)
+EVO_BUILD_TYPE := OFFICIAL
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := false
+TARGET_USES_MINI_GAPPS := true
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_gtaxllte
+PRODUCT_NAME := evolution_gtaxllte
 PRODUCT_DEVICE := gtaxllte
 PRODUCT_MODEL := SM-T585
 PRODUCT_BRAND := samsung

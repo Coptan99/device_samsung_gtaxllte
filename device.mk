@@ -17,7 +17,9 @@
 LOCAL_PATH := device/samsung/gtaxllte
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-evolution
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
